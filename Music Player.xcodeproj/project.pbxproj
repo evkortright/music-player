@@ -12,6 +12,7 @@
 		B1D2E6D71EC7862B004A2BBA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B1D2E6D51EC7862B004A2BBA /* Main.storyboard */; };
 		B1D2E6D91EC7862B004A2BBA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B1D2E6D81EC7862B004A2BBA /* Assets.xcassets */; };
 		B1D2E6DC1EC7862B004A2BBA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B1D2E6DA1EC7862B004A2BBA /* LaunchScreen.storyboard */; };
+		B1D2E6E41EC78A00004A2BBA /* Dance Macabre.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = B1D2E6E31EC78A00004A2BBA /* Dance Macabre.mp3 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,7 @@
 		B1D2E6D81EC7862B004A2BBA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B1D2E6DB1EC7862B004A2BBA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B1D2E6DD1EC7862B004A2BBA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B1D2E6E31EC78A00004A2BBA /* Dance Macabre.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Dance Macabre.mp3"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +60,7 @@
 				B1D2E6D31EC7862B004A2BBA /* ViewController.swift */,
 				B1D2E6D51EC7862B004A2BBA /* Main.storyboard */,
 				B1D2E6D81EC7862B004A2BBA /* Assets.xcassets */,
+				B1D2E6E31EC78A00004A2BBA /* Dance Macabre.mp3 */,
 				B1D2E6DA1EC7862B004A2BBA /* LaunchScreen.storyboard */,
 				B1D2E6DD1EC7862B004A2BBA /* Info.plist */,
 			);
@@ -123,6 +126,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B1D2E6E41EC78A00004A2BBA /* Dance Macabre.mp3 in Resources */,
 				B1D2E6DC1EC7862B004A2BBA /* LaunchScreen.storyboard in Resources */,
 				B1D2E6D91EC7862B004A2BBA /* Assets.xcassets in Resources */,
 				B1D2E6D71EC7862B004A2BBA /* Main.storyboard in Resources */,

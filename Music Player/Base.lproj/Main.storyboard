@@ -1,14 +1,18 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11134" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11106"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Music_Player" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -16,8 +20,89 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="WGZ-gC-1VN">
+                                <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <items>
+                                    <navigationItem title="Music Player" id="f6W-hA-wBn">
+                                        <barButtonItem key="rightBarButtonItem" systemItem="play" id="K0c-xM-nYZ">
+                                            <connections>
+                                                <action selector="playTapped:" destination="BYZ-38-t0r" id="fix-uB-mFo"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zCt-DH-O4M">
+                                <rect key="frame" x="0.0" y="623" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                <items>
+                                    <barButtonItem systemItem="pause" id="FZl-9E-QlX">
+                                        <connections>
+                                            <action selector="pauseTapped:" destination="BYZ-38-t0r" id="VRZ-Wd-slz"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="1MK-lA-hvc"/>
+                                    <barButtonItem title="Stop" id="WzX-Pk-nYg">
+                                        <connections>
+                                            <action selector="stopTapped:" destination="BYZ-38-t0r" id="v4D-96-gnu"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="C5H-Gi-hvJ">
+                                <rect key="frame" x="60" y="318" width="254" height="31"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="250" id="FX5-hJ-vE9"/>
+                                    <constraint firstAttribute="height" constant="30" id="YbH-lD-kb5"/>
+                                </constraints>
+                                <connections>
+                                    <action selector="positionSliderChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="FWl-oK-9GX"/>
+                                </connections>
+                            </slider>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="T9V-5H-i36">
+                                <rect key="frame" x="60" y="398" width="254" height="31"/>
+                                <connections>
+                                    <action selector="volumeSliderChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="cHg-3d-tzQ"/>
+                                </connections>
+                            </slider>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Now playing:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TLR-LF-C7P">
+                                <rect key="frame" x="62" y="196" width="250" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="250" id="NKj-Xb-LuZ"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="song title.mp3" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="quj-vg-DeP">
+                                <rect key="frame" x="62.5" y="247" width="250" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="TLR-LF-C7P" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="2p6-P2-e24"/>
+                            <constraint firstItem="T9V-5H-i36" firstAttribute="width" secondItem="C5H-Gi-hvJ" secondAttribute="width" id="9gR-D7-4sW"/>
+                            <constraint firstItem="quj-vg-DeP" firstAttribute="top" secondItem="TLR-LF-C7P" secondAttribute="bottom" constant="30" id="9w7-BD-rMu"/>
+                            <constraint firstItem="TLR-LF-C7P" firstAttribute="width" secondItem="quj-vg-DeP" secondAttribute="width" id="GkW-0G-g7X"/>
+                            <constraint firstItem="C5H-Gi-hvJ" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="MSy-iN-dzi"/>
+                            <constraint firstItem="quj-vg-DeP" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Pbf-P4-N66"/>
+                            <constraint firstItem="T9V-5H-i36" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="WiZ-zS-2aF"/>
+                            <constraint firstItem="T9V-5H-i36" firstAttribute="top" secondItem="C5H-Gi-hvJ" secondAttribute="bottom" constant="50" id="iUr-Ix-TLm"/>
+                            <constraint firstItem="T9V-5H-i36" firstAttribute="height" secondItem="C5H-Gi-hvJ" secondAttribute="height" id="wc6-7a-BAn"/>
+                            <constraint firstItem="C5H-Gi-hvJ" firstAttribute="top" secondItem="quj-vg-DeP" secondAttribute="bottom" constant="50" id="yH7-V8-PGu"/>
+                            <constraint firstItem="C5H-Gi-hvJ" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="z6o-gu-Ajf"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="positionSlider" destination="C5H-Gi-hvJ" id="G0H-uH-Bj7"/>
+                        <outlet property="titleLabel" destination="quj-vg-DeP" id="SV0-h5-gnT"/>
+                        <outlet property="volumeSlider" destination="T9V-5H-i36" id="gxA-3c-s0w"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
